@@ -1,0 +1,202 @@
+:root {
+  --main-color: #1A1A1A; 
+  --main-bg-color: #FFFFFF;
+  --main-accent-color: rgb(124, 124, 124);
+
+  --dark-bg-color: #1A1A1A;
+  --dark-color: rgb(211, 211, 211);
+
+  --main-padding: 3em;
+
+  --news-animation-time: 1s;
+}
+
+
+
+body {
+  overflow: hidden;
+}
+
+.App {
+  height: 100vh;
+  width: 100vw;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.dayTheme {
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
+}
+.nightTheme {
+  background-color: var(--dark-bg-color);
+  color: var(--dark-color);
+}
+
+/*  HEADER  */
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding: var(--main-padding);
+}
+
+/*  NIGHT-MODE  */
+.dayNightToggleButton {
+  background-color: transparent;
+  border: none;
+  align-self: flex-start;
+}
+.dayNightToggleButton>img {
+  width: 50px;
+}
+
+/*  CLOCK  */
+.time {
+  font-size: 4em;
+  letter-spacing: 0.1em;
+  font-weight: lighter;
+  margin: 0;
+}
+.date {
+  font-size: 1.5em;
+  color: var(--main-accent-color);
+  letter-spacing: 0.1em;
+  margin: 0;
+  font-weight: 300;
+}
+
+/*  WEATHER */
+.currentConditions {
+  width: 100px;
+  margin: 0;
+}
+.currentTemp {
+  font-size: 4em;
+  margin: 0;
+  font-weight: lighter;
+}
+.minmaxWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  display: none;
+}
+.maxTemp {
+  font-size: 1.5em;
+  margin: 0;
+  line-height: 1em;
+  font-weight: 300;
+}
+.minTemp {
+  margin: 0;
+  line-height: 1em;
+  font-weight: 300;
+}
+
+
+
+
+
+/*  WELCOME MESSAGE  */
+h1 {
+  font-size: 5em;
+  font-weight: lighter;
+  letter-spacing: 0.1em;
+}
+
+
+
+/*  FOOTER  */
+footer {
+  padding: var(--main-padding);
+}
+
+/*  NEWS  */
+.news>h2 {
+  color: var(--main-accent-color);
+  font-size: 2em;
+  font-weight: lighter;
+  margin: 0;
+}
+.newsItem>p {
+  display: inline-block;
+  letter-spacing: 0.05em;
+}
+.newsItem>button {
+  color: var(--main-accent-color);
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  background-color: transparent;
+  border: none;
+  margin-left: 0.5em;
+}
+#newsFrame {
+  background-color: var(--main-bg-color);
+  position: absolute;
+  left: 15%;
+  width: 70%;
+  height: 85vh;
+  display: block;
+  border: none;
+
+  top: 100vh;
+}
+.newsFrameAppear {
+  animation-name: newsFrameAppear;
+  animation-duration: var(--news-animation-time);
+  animation-fill-mode: forwards;
+}
+.newsFrameDisappear {
+  animation-name: newsFrameDisappear;
+  animation-duration: var(--news-animation-time);
+  animation-fill-mode: forwards;
+}
+@keyframes newsFrameAppear {
+  0%   {top: 100vh;}
+  100% {top: 15vh;}
+}
+@keyframes newsFrameDisappear {
+  0%   {top: 15vh;}
+  100% {top: 100vh;}
+}
+#newsFrameBackButton {
+  position: absolute;
+  top: 15vh;
+  left: 0;
+  width: 15%;
+  height: 70vh;
+  border: none;
+  background-color: transparent;
+
+  display: none;
+  opacity: 0;
+}
+#newsFrameBackButton>img {
+  width: 40px;
+}
+.newsFrameBackButtonAppear {
+  animation-name: newsFrameBackButtonAppear;
+  animation-duration: calc(var(--news-animation-time) / 2);
+  /*animation-delay: calc(var(--news-animation-time) / 2);*/
+  animation-fill-mode: forwards;
+}
+.newsFrameBackButtonDisappear {
+  animation-name: newsFrameBackButtonDisappear;
+  animation-duration: calc(var(--news-animation-time) / 2);
+  /*animation-delay: calc(var(--news-animation-time) / 2);*/
+  animation-fill-mode: forwards;
+}
+@keyframes newsFrameBackButtonAppear {
+  0%   {opacity: 0;}
+  100% {opacity: 100;}
+}
+@keyframes newsFrameBackButtonDisappear {
+  0%   {opacity: 100;}
+  100% {opacity: 0;}
+}
