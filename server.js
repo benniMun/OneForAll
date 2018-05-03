@@ -8,7 +8,7 @@ const MongoClient = require('mongodb').MongoClient;
 const DB_USERNAME = 'User'
 const DB_PASSWORD = 'Password'
 const DB_URL = 'mongodb://' + DB_USERNAME + ':' + DB_PASSWORD + '@ds111390.mlab.com:11390/oneforall';
-const errorGreeting = {condition: "error", before: "U got an Error, ", after: "..."};
+const errorGreeting = {condition: "error", before: "You got an Error, ", after: "..."};
 
 
 
